@@ -1,7 +1,7 @@
-afr-sender
+AFRSender
 ==========
 
-An example Android App that integrates with "A Faster Reader" https://play.google.com/store/apps/details?id=com.basetis.blinkingread.blinkingread
+**AFRSender** is an example Android App that integrates with **"A Faster Reader"** https://play.google.com/store/apps/details?id=com.basetis.blinkingread.blinkingread
 
 A Faster Reader, AFR, is a new way to read text on mobile devices.
 
@@ -84,7 +84,7 @@ Catch the callback
 
 And listen for _COM.BASETIS.BLINKING.BROADCAST.CALLBACK.AFR_ Action
 
-So you can filter your callback getting Intent Extra _AFR_REQUIRED_EXTRA_PACKAGE_ that will match with _AFR_REQUIRED_EXTRA_PACKAGE_ that you set when calling to AFR
+So you can filter your callback getting Intent Extra *AFR_REQUIRED_EXTRA_PACKAGE* that will match with *AFR_REQUIRED_EXTRA_PACKAGE* that you set when calling to AFR
 
         if (intent.getAction().equals(BROADCAST_AFR_CALLBACK_ACTION)) {
 
