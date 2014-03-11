@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call AFR Success!"
+        android:id="@+id/button_success_call"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="35dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call AFR Fail - No EXTRA_TEXT"
+        android:id="@+id/button_fail_call_no_extra_text"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="25dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call AFR Fail - EXTRA_TEXT Empty"
+        android:id="@+id/button_fail_call_extra_text_empty"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="25dp"
+    />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call AFR Not my callback"
+        android:id="@+id/button_receive_other_app_callback"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="25dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call AFR Fail - No API token sent"
+        android:id="@+id/button_fail_no_api_token_sent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="25dp"
+        />
+
+</LinearLayout>
