@@ -2,13 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.basetis.afrsender.afrsender" >
 
+    <permission android:name="com.basetis.blinkingread.blinkingread.CALL_AFR" android:label="my_permission" android:protectionLevel="normal"></permission>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.basetis.afrsender.afrsender.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,9 +19,6 @@
             </intent-filter>
         </activity>
         <receiver android:name=".MainBroadcastReceiver" android:enabled="true">
-            <intent-filter>
-                <action android:name="COM.BASETIS.BLINKING.BROADCAST.CALLBACK.AFR"></action>
-            </intent-filter>
         </receiver>
     </application>
 

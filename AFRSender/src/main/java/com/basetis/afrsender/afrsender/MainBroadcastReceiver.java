@@ -17,47 +17,26 @@ public class MainBroadcastReceiver extends BroadcastReceiver {
     public static final String BROADCAST_AFR_CALLBACK_EXTRA = "AFR_RESULT";
     public static final String BROADCAST_AFR_CALLBACK_SUCCESS_RESULT_DESC = "SUCCESS";
 
+    public static final String API_RESULT_EXTRA = "AFR_API_RESULT";
+    public static final String API_CALL_SUCCEEDED = "API_CALL_SUCCEEDED";
+
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        Log.d(TAG, intent.getAction());
-        Log.d(TAG, "Received package: " + intent.getStringExtra(AFR_REQUIRED_EXTRA_PACKAGE));
-        Log.d(TAG, "My package: " + context.getApplicationContext().getPackageName());
+        Log.d(TAG, "Callback Received");
 
+        boolean isSuccess = intent.getBooleanExtra(API_CALL_SUCCEEDED,false);
+        String result = intent.getStringExtra(API_RESULT_EXTRA);
+        if (result == null) {
+            // This should not happen, but you never know :P
+            Log.e(TAG,"Not result received from AFR");
+            return;
+        }
 
-        if (intent.getAction().equals(BROADCAST_AFR_CALLBACK_ACTION)) {
-
-            String callerPackage = intent.getStringExtra(AFR_REQUIRED_EXTRA_PACKAGE);
-            if (callerPackage != null && !callerPackage.isEmpty()) {
-
-                String myPackage = context.getApplicationContext().getPackageName();
-                if (callerPackage.equals(myPackage)) {
-
-                    // So this is my callback
-                    Log.d(TAG, "Callback Received");
-
-                    String result = intent.getStringExtra(BROADCAST_AFR_CALLBACK_EXTRA);
-
-                    if (result != null && !result.isEmpty()) {
-                        if (result.equals(BROADCAST_AFR_CALLBACK_SUCCESS_RESULT_DESC)) {
-                            Log.d(TAG, "Everything OK");
-                        } else {
-                            // result contains error description
-                            Log.e(TAG,result);
-                        }
-                    } else {
-                        // This should not happen, but you never know :P
-                        Log.e(TAG,"Not result received from AFR");
-                    }
-
-
-                } else {
-
-                    Log.d(TAG, "This broadcast is not mine");
-                }
-
-            }
-
+        if (isSuccess) {
+            Log.i(TAG,result);
+        } else {
+            Log.e(TAG,result);
         }
 
     }
