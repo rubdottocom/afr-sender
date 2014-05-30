@@ -1,11 +1,8 @@
 AFRSender
 ==========
 
-<<<<<<< HEAD
-AFRSender is an example Android App that integrates with "A Faster Reader" https://play.google.com/store/apps/details?id=com.basetis.blinkingread.blinkingread
-=======
+
 **AFRSender** is an example Android App that integrates with **"A Faster Reader"** https://play.google.com/store/apps/details?id=com.basetis.blinkingread.blinkingread
->>>>>>> FETCH_HEAD
 
 A Faster Reader, AFR, is a new way to read text on mobile devices.
 
@@ -124,11 +121,11 @@ AFR will send you 2 EXTRAS:
 1. "API_AFR_CALLBACK_CALL_SUCCEEDED_EXTRA" that is a boolean that tells you if everything goes fien
 2. "API_AFR_CALLBACK_MESSAGE_EXTRA" that gives you a message about whats going on
 
-<<<<<<< HEAD
+
 __Code:__
-=======
+
 So you can filter your callback getting Intent Extra *AFR_REQUIRED_EXTRA_PACKAGE* that will match with *AFR_REQUIRED_EXTRA_PACKAGE* that you set when calling to AFR
->>>>>>> FETCH_HEAD
+
 
     public class AFRCallbackBroadcastReceiver extends BroadcastReceiver {
         public final String TAG = AFRCallbackBroadcastReceiver.class.getCanonicalName();
